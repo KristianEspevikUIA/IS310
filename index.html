@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IS-310 Prosjektgruppe · UiA Høst 2026</title>
+<meta name="description" content="Prosjektgruppe i IS-310 Prosjektgjennomføring ved Universitetet i Agder. Bli kjent med gruppen, våre ambisjoner og hva slags prosjekt vi ser etter.">
+<meta name="theme-color" content="#e4572e">
+<meta property="og:title" content="IS-310 Prosjektgruppe · UiA Høst 2026">
+<meta property="og:description" content="Fem studenter, ett prosjekt, høye ambisjoner.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<!-- Fade-inn-effekten skal bare slå inn når JS faktisk kjører,
+     slik at innholdet aldri blir liggende usynlig uten JS. -->
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<a class="skip-link" href="#hovedinnhold">Hopp til hovedinnhold</a>
+
+<header class="site-header" id="toppen">
+  <div class="wrap header-inner">
+    <a class="brand" href="#toppen">
+      <span class="brand-mark" aria-hidden="true">310</span>
+      <span class="brand-text">
+        <strong>IS-310</strong>
+        <small>Prosjektgruppe · UiA</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hovedmeny">
+      <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="visually-hidden">Åpne meny</span>
+    </button>
+
+    <nav class="site-nav" id="hovedmeny" aria-label="Hovedmeny">
+      <ul>
+        <li><a href="#om-gruppen">Om gruppen</a></li>
+        <li><a href="#medlemmer">Medlemmer</a></li>
+        <li><a href="#prosjekt">Prosjekt</a></li>
+        <li><a href="#veikart">Veikart</a></li>
+        <li><a class="nav-cta" href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="hovedinnhold">
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <p class="eyebrow reveal">IS-310 Prosjektgjennomføring · Universitetet i Agder · Høst 2026</p>
+      <h1 class="reveal">Fem studenter.<br>Ett prosjekt.<br><span class="hl">Høye ambisjoner.</span></h1>
+      <p class="lead reveal">Vi er en prosjektgruppe på bachelorprogrammet IT og informasjonssystemer ved UiA.
+        Her kan du bli kjent med oss, se hvordan vi jobber, og lese hva slags prosjekt og
+        samarbeidspartner vi ser etter i høst.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="#medlemmer">Møt gruppen</a>
+        <a class="btn btn-ghost" href="#prosjekt">Vårt prosjekt <span aria-hidden="true">→</span></a>
+      </div>
+
+      <dl class="stats reveal">
+        <div class="stat"><dt>Medlemmer</dt><dd>5</dd></div>
+        <div class="stat"><dt>Studieprogram</dt><dd>IT og informasjonssystemer</dd></div>
+        <div class="stat"><dt>Semester</dt><dd>Høst 2026</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section" id="om-gruppen">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Om gruppen</p>
+        <h2>En gjeng som liker å levere</h2>
+        <p class="section-lead">Vi har satt sammen en gruppe med ulik bakgrunn og ulike styrker – og med en felles
+          forventning om at vi legger inn arbeidet som trengs. Vi tror på tydelige avtaler, jevn framdrift, og at
+          alle skal ha noe å bidra med og noe å lære.</p>
+      </div>
+
+      <div class="cards cards-3">
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">01</span>
+          <h3>Tydelige avtaler</h3>
+          <p>Vi setter felles kjøreregler tidlig: faste møtepunkter, hvem som gjør hva, og hvordan vi sier ifra når
+            noe skjærer seg. Forutsigbarhet gjør at vi slipper å bruke energi på misforståelser.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">02</span>
+          <h3>Jevn framdrift</h3>
+          <p>Vi jobber i korte iterasjoner med konkrete delmål, og viser fram noe som faktisk virker underveis
+            framfor å samle alt til en innspurt på slutten av semesteret.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon" aria-hidden="true">03</span>
+          <h3>Inkluderende fagmiljø</h3>
+          <p>Vi har ulik erfaring, og det ser vi på som en styrke. Den som kan mest om noe forklarer det videre, og
+            vi bytter på oppgaver slik at alle får lære noe nytt.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="medlemmer">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Medlemmer</p>
+        <h2>Dette er oss</h2>
+        <p class="section-lead">Fem studenter med hver sin inngang til faget. Under finner du en kort presentasjon
+          av hver enkelt.</p>
+      </div>
+
+      <!--
+        TIL GRUPPA: fyll inn hvert kort under.
+        · Bytt ut teksten i .member-role og .member-bio med din egen presentasjon.
+        · Bytt ut interessene i <ul class="tags"> med dine egne (2-4 stykker).
+        · Vil du ha bilde? Legg fila i assets/img/ og bytt
+          <span class="avatar" aria-hidden="true">XX</span>
+          med <img class="avatar" src="assets/img/fornavn.jpg" alt="Portrett av Fornavn Etternavn">
+        · Har du laget videopresentasjon? Fjern hidden-attributtet på .member-link og sett inn lenken.
+      -->
+
+      <div class="cards cards-3 members">
+        <article class="member reveal">
+          <span class="avatar" aria-hidden="true">EM</span>
+          <h3>Endi Muriqi</h3>
+          <p class="member-role">Rolle i gruppen – fyll inn</p>
+          <p class="member-bio">Kort presentasjon: skriv to–tre setninger om deg selv. Hva studerer du, hva
+            interesserer du deg for faglig, og hva vil du bidra med i prosjektet?</p>
+          <ul class="tags">
+            <li>Interesse</li><li>Interesse</li>
+          </ul>
+          <a class="member-link" href="#" hidden>Se videopresentasjon <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="member reveal">
+          <span class="avatar" aria-hidden="true">TH</span>
+          <h3>Taavi-Topias Henell</h3>
+          <p class="member-role">Rolle i gruppen – fyll inn</p>
+          <p class="member-bio">Kort presentasjon: skriv to–tre setninger om deg selv. Hva studerer du, hva
+            interesserer du deg for faglig, og hva vil du bidra med i prosjektet?</p>
+          <ul class="tags">
+            <li>Interesse</li><li>Interesse</li>
+          </ul>
+          <a class="member-link" href="#" hidden>Se videopresentasjon <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="member reveal">
+          <span class="avatar" aria-hidden="true">BK</span>
+          <h3>Brage Kristoffersen</h3>
+          <p class="member-role">Rolle i gruppen – fyll inn</p>
+          <p class="member-bio">Kort presentasjon: skriv to–tre setninger om deg selv. Hva studerer du, hva
+            interesserer du deg for faglig, og hva vil du bidra med i prosjektet?</p>
+          <ul class="tags">
+            <li>Interesse</li><li>Interesse</li>
+          </ul>
+          <a class="member-link" href="#" hidden>Se videopresentasjon <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="member reveal">
+          <span class="avatar" aria-hidden="true">NS</span>
+          <h3>Nicolai Stephansen</h3>
+          <p class="member-role">Rolle i gruppen – fyll inn</p>
+          <p class="member-bio">Kort presentasjon: skriv to–tre setninger om deg selv. Hva studerer du, hva
+            interesserer du deg for faglig, og hva vil du bidra med i prosjektet?</p>
+          <ul class="tags">
+            <li>Interesse</li><li>Interesse</li>
+          </ul>
+          <a class="member-link" href="#" hidden>Se videopresentasjon <span aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="member reveal">
+          <span class="avatar" aria-hidden="true">KE</span>
+          <h3>Kristian Espevik</h3>
+          <p class="member-role">Rolle i gruppen – fyll inn</p>
+          <p class="member-bio">Kort presentasjon: skriv to–tre setninger om deg selv. Hva studerer du, hva
+            interesserer du deg for faglig, og hva vil du bidra med i prosjektet?</p>
+          <ul class="tags">
+            <li>Interesse</li><li>Interesse</li>
+          </ul>
+          <a class="member-link" href="#" hidden>Se videopresentasjon <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="prosjekt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Prosjekt og ambisjonsnivå</p>
+        <h2>Hva vi ser etter i høst</h2>
+        <p class="section-lead">Vi ønsker oss et prosjekt med en reell oppdragsgiver og et reelt problem – noe som
+          faktisk blir tatt i bruk når semesteret er over.</p>
+      </div>
+
+      <div class="split">
+        <div class="split-main">
+          <article class="prose-block reveal">
+            <h3>Type prosjekt</h3>
+            <p>Vi er mest interessert i systemutvikling med en tydelig brukerside: en webapplikasjon, et internt
+              verktøy, eller en løsning som forenkler en arbeidsprosess. Vi er nysgjerrige på å bruke AI der det
+              faktisk løser et problem, men vil at teknologivalgene skal styres av behovet – ikke omvendt.</p>
+          </article>
+          <article class="prose-block reveal">
+            <h3>Type bedrift</h3>
+            <p>Vi er åpne for både oppstartsselskap, etablert bedrift og offentlig virksomhet. Det viktigste for oss
+              er en oppdragsgiver som har tid til å være tilgjengelig underveis, som har et konkret behov, og som
+              ønsker å gi oss reelt ansvar framfor en oppgave på siden.</p>
+          </article>
+          <article class="prose-block reveal">
+            <h3>Ambisjonsnivå</h3>
+            <p>Vi legger lista høyt. Målet er en leveranse vi kan være stolte av å vise fram – både faglig og som et
+              resultat oppdragsgiver kan ta i bruk. Vi sikter mot toppkarakter, og er innstilt på å legge inn den
+              arbeidsmengden det krever.</p>
+          </article>
+        </div>
+
+        <aside class="split-aside">
+          <div class="panel reveal">
+            <h3>Kort oppsummert</h3>
+            <ul class="checklist">
+              <li>Reell oppdragsgiver og reelt behov</li>
+              <li>Systemutvikling med tydelig brukerside</li>
+              <li>Noe som settes i drift, ikke bare demonstreres</li>
+              <li>Tett dialog gjennom hele semesteret</li>
+              <li>Vi ønsker å levere på toppnivå</li>
+            </ul>
+          </div>
+          <div class="panel panel-accent reveal">
+            <h3>Slik jobber vi</h3>
+            <ul class="tags tags-lg">
+              <li>Git &amp; GitHub</li>
+              <li>Kanban-tavle</li>
+              <li>Ukentlige statusmøter</li>
+              <li>Discord</li>
+              <li>Demo hver iterasjon</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="veikart">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="kicker">Veikart</p>
+        <h2>Slik legger vi opp semesteret</h2>
+        <p class="section-lead">En grov plan som vi justerer sammen med oppdragsgiver etter hvert som prosjektet tar
+          form.</p>
+      </div>
+
+      <ol class="timeline">
+        <li class="reveal">
+          <span class="tl-phase">Fase 1</span>
+          <h3>Etablere gruppen</h3>
+          <p>Bli kjent, avklare forventninger og arbeidsform, sette opp felles verktøy og publisere dette
+            nettstedet.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-phase">Fase 2</span>
+          <h3>Finne prosjekt</h3>
+          <p>Kartlegge aktuelle oppdragsgivere, ta kontakt, og lande et prosjekt med riktig omfang for
+            semesteret.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-phase">Fase 3</span>
+          <h3>Planlegge og avklare</h3>
+          <p>Forstå behovet, skrive ned krav og avgrensninger, og bli enige om leveranse, milepæler og
+            møtepunkter.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-phase">Fase 4</span>
+          <h3>Utvikle og teste</h3>
+          <p>Jobbe i korte iterasjoner med jevnlige demoer, tilbakemeldinger fra oppdragsgiver og løpende
+            testing.</p>
+        </li>
+        <li class="reveal">
+          <span class="tl-phase">Fase 5</span>
+          <h3>Levere og presentere</h3>
+          <p>Overlevere løsning og dokumentasjon, oppsummere erfaringer og presentere resultatet.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section cta-section" id="kontakt">
+    <div class="wrap">
+      <div class="cta reveal">
+        <div class="cta-text">
+          <p class="kicker">Kontakt</p>
+          <h2>Har du et prosjekt til oss?</h2>
+          <p class="section-lead">Er du en bedrift, organisasjon eller ansatt ved UiA med et behov vi kan ta tak i?
+            Vi hører gjerne fra deg – også hvis du bare vil sparre om en idé.</p>
+        </div>
+        <div class="cta-actions">
+          <!-- TODO: bytt ut med gruppas felles kontakt-e-post -->
+          <a class="btn btn-primary" href="mailto:kristiaes@uia.no?subject=IS-310%20prosjektforslag">Send oss en e-post</a>
+          <a class="btn btn-ghost" href="https://github.com/KristianEspevikUIA/IS310">Se repoet på GitHub <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand"><strong>IS-310 Prosjektgjennomføring</strong><br>Universitetet i Agder · Høst 2026</p>
+    <p class="footer-names">Endi Muriqi · Taavi-Topias Henell · Brage Kristoffersen · Nicolai Stephansen ·
+      Kristian Espevik</p>
+    <p class="footer-top"><a href="#toppen">Til toppen ↑</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

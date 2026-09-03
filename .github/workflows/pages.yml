@@ -1,0 +1,44 @@
+name: Publiser til GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Én publisering om gangen, og la en pågående publisering bli ferdig.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hent koden
+        uses: actions/checkout@v4
+
+      - name: Sett opp Pages (slår det på hvis det ikke er aktivert)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Last opp nettstedet
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publiser
+        id: deployment
+        uses: actions/deploy-pages@v4

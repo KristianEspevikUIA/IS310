@@ -490,6 +490,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .tags-lg li { font-size: .88rem; padding: .4rem .9rem; background: var(--surface); }
 
+/* Kortene i medlemsraden er like høye, så interesse-taggene skal ligge
+   på linje nederst selv om presentasjonene er ulikt lange. */
+.member { display: flex; flex-direction: column; }
+.member .tags { margin-top: auto; padding-top: 1.1rem; }
+
 /* ---------- Prosjekt / split ---------- */
 
 .split {

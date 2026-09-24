@@ -56,7 +56,8 @@
     revealables.forEach(function (el) { revealObserver.observe(el); });
   }
 
-  /* Marker aktiv lenke i menyen */
+  /* Marker aktiv lenke i menyen. En seksjon uten egen menylenke kan peke
+     på en annen med data-nav, og hero (uten lenke) fjerner markeringen. */
   var sections = Array.prototype.slice.call(
     document.querySelectorAll("main section[id]")
   );
@@ -73,7 +74,7 @@
 
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
+        if (entry.isIntersecting) setActive(entry.target.getAttribute("data-nav") || entry.target.id);
       });
     }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
 

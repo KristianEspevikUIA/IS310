@@ -1,8 +1,9 @@
-# IS-310 Prosjektgruppe · UiA høst 2026
+# IS-310 Bachelorgruppe · UiA
 
 Nettsted for prosjektgruppen vår i **IS-310 Prosjektgjennomføring** ved Universitetet i Agder.
-Siden svarer på oppgave 1: presentasjon av hver student, og våre tanker om gruppen, prosjekttype,
-bedrift og ambisjonsnivå.
+Siden er gruppas ansikt utad mot bedrifter og virksomheter som kan bli oppdragsgiver for
+bacheloroppgaven vår våren 2027. Den bygger videre på oppgave 1 (presentasjon av gruppen) med en
+profilering rettet mot potensielle oppdragsgivere.
 
 **Publisert side:** https://kristianespevikuia.github.io/IS310/
 
@@ -11,36 +12,52 @@ bedrift og ambisjonsnivå.
 - Endi Muriqi
 - Taavi-Topias Henell
 - Brage Kristoffersen
-- Nicolai Stephansen
+- Nicolai A.M. Stephansen
 - Kristian Espevik
+
+## Innhold
+
+Siden er én side med ankere til hver seksjon:
+
+| Seksjon        | Anker          | Innhold                                                                  |
+| -------------- | -------------- | ------------------------------------------------------------------------ |
+| Toppen         | `#start`       | Hvem vi er, hva vi søker og nøkkeltall                                   |
+| Om oss         | `#om-oss`      | Gruppen overordnet og hva som kjennetegner oss                           |
+| Teamet         | `#teamet`      | Presentasjon av hvert medlem, med lenke til LinkedIn                     |
+| Kompetanse     | `#kompetanse`  | Samlet kompetanse og et eksempel fra tidligere prosjekter                |
+| Prosjektønsker | `#prosjekt`    | Interesser, eksempler på oppdrag, ønsket oppdragsgiver og ambisjonsnivå  |
+| Samarbeid      | `#samarbeid`   | Hva oppdragsgiver får, hva vi trenger, og spørsmål og svar               |
+| Arbeidsform    | `#arbeidsform` | Slik jobber vi, verktøy og tidsplan                                      |
+| Kontakt        | `#kontakt`     | Kontaktperson og e-post                                                  |
+
+## Legg inn LinkedIn-profilen din
+
+1. Åpne [`index.html`](index.html) og finn kortet ditt i seksjonen `id="teamet"`.
+2. Lim inn hele adressen til profilen i `href=""` på LinkedIn-lenken, for eksempel
+   `href="https://www.linkedin.com/in/fornavn-etternavn/"`.
+3. Ferdig – knappen vises automatisk. Lenker med tom `href` skjules, så siden viser aldri døde
+   lenker.
+
+GitHub- og videolenken fungerer på samme måte. Har du motforestillinger mot LinkedIn, lim inn
+adressen til en annen kanal og bytt teksten på knappen.
+
+## Bilde (valgfritt)
+
+Legg bildet i `assets/img/` og bytt `<span class="avatar" aria-hidden="true">XX</span>` i kortet ditt med
+`<img class="avatar" src="assets/img/fornavn.jpg" alt="Portrett av Fornavn Etternavn">`.
+Et kvadratisk, profesjonelt portrett (minst 200 × 200 px) blir finest.
 
 ## Filer
 
 ```
 index.html              hele nettsiden (én side, med ankere til hver seksjon)
-assets/css/styles.css   design, farger og responsivt oppsett
+assets/css/styles.css   design, farger, mørk modus og responsivt oppsett
 assets/js/main.js       mobilmeny, aktiv menylenke og fade-inn ved scroll
-assets/img/             favicon og eventuelle portrettbilder
+assets/img/             favicon, delingsbilde (og eventuelle portrettbilder)
 .github/workflows/      publiserer automatisk til GitHub Pages ved push til main
 ```
 
-## Slik fyller du inn din egen presentasjon
-
-Alt som skal fylles inn ligger i [`index.html`](index.html) under seksjonen `id="medlemmer"`.
-Finn kortet med navnet ditt og bytt ut:
-
-1. `<p class="member-role">` – rollen din i gruppen (f.eks. «Utvikler», «Prosjektleder»).
-2. `<p class="member-bio">` – to–tre setninger om deg selv.
-3. `<ul class="tags">` – to til fire interesser eller ferdigheter.
-4. **Bilde (valgfritt):** legg bildet i `assets/img/` og bytt
-   `<span class="avatar" aria-hidden="true">XX</span>` med
-   `<img class="avatar" src="assets/img/fornavn.jpg" alt="Portrett av Fornavn Etternavn">`.
-5. **Videopresentasjon (valgfritt):** fjern `hidden` fra `<a class="member-link">` og lim inn lenken.
-
-Teksten om gruppen, prosjektet og ambisjonsnivået ligger i seksjonene `om-gruppen`, `prosjekt` og
-`veikart` – juster gjerne ordlyden så den stemmer med det vi blir enige om.
-
-Husk også å bytte kontakt-e-posten nederst i `index.html` til gruppas felles adresse.
+`assets/img/og-image.png` er bildet som vises når lenken deles på LinkedIn, i Teams eller i e-post.
 
 ## Kjøre lokalt
 
@@ -55,4 +72,4 @@ Siden ligger da på http://localhost:8000
 ## Publisering
 
 Hver push til `main` bygger og publiserer siden automatisk via GitHub Actions
-(`.github/workflows/pages.yml`). Første kjøring slår også på GitHub Pages for repoet.
+(`.github/workflows/pages.yml`).

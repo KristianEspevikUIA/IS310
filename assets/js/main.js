@@ -39,6 +39,35 @@
     onScroll();
   }
 
+  /* Promovideo: egen avspillingsknapp over forsidebildet. Nettleserens
+     kontroller tar over nar videoen er i gang, og knappen kommer tilbake
+     nar den er ferdig. */
+  var promo = document.querySelector(".promo");
+  var promoVideo = promo && promo.querySelector("video");
+  var promoPlay = promo && promo.querySelector(".promo-play");
+
+  if (promoVideo && promoPlay) {
+    var showControls = function () {
+      promoVideo.controls = true;
+      promo.classList.add("is-started");
+    };
+
+    promoVideo.controls = false;
+
+    promoPlay.addEventListener("click", function () {
+      showControls();
+      promoVideo.focus();
+      var started = promoVideo.play();
+      if (started && started.catch) started.catch(function () {});
+    });
+
+    promoVideo.addEventListener("play", showControls);
+    promoVideo.addEventListener("ended", function () {
+      promoVideo.controls = false;
+      promo.classList.remove("is-started");
+    });
+  }
+
   /* Fade inn seksjoner nar de kommer i visning */
   var revealables = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {

@@ -21,7 +21,7 @@ Siden er én side med ankere til hver seksjon:
 
 | Seksjon        | Anker          | Innhold                                                                  |
 | -------------- | -------------- | ------------------------------------------------------------------------ |
-| Toppen         | `#start`       | Hvem vi er, hva vi søker og nøkkeltall                                   |
+| Toppen         | `#start`       | Promovideoen, hvem vi er, hva vi søker og nøkkeltall                     |
 | Om oss         | `#om-oss`      | Gruppen overordnet og hva som kjennetegner oss                           |
 | Teamet         | `#teamet`      | Presentasjon av hvert medlem, med lenke til LinkedIn                     |
 | Kompetanse     | `#kompetanse`  | Samlet kompetanse og et eksempel fra tidligere prosjekter                |
@@ -29,6 +29,20 @@ Siden er én side med ankere til hver seksjon:
 | Samarbeid      | `#samarbeid`   | Hva oppdragsgiver får, hva vi trenger, og spørsmål og svar               |
 | Arbeidsform    | `#arbeidsform` | Slik jobber vi, verktøy og tidsplan                                      |
 | Kontakt        | `#kontakt`     | Kontaktperson og e-post                                                  |
+
+## Promovideo
+
+Promovideoen (1 min 47 s) er det første man ser på siden. Den ligger i repoet og spilles av direkte
+fra GitHub Pages:
+
+- `assets/video/promo.mp4` – selve videoen (1080p, 25 bilder/s, ca. 59 MB)
+- `assets/img/promo-poster.jpg` – forsidebildet som vises før avspilling (16:9)
+
+Skal videoen byttes ut, erstatter du de to filene med samme filnavn. Husk at GitHub ikke tar imot
+filer over 100 MB, så en eksport rett fra redigeringsprogrammet må komprimeres først – for eksempel
+til H.264 i 1080p med rundt 4–5 Mbit/s, og med «web optimized»/«fast start» slått på så videoen kan
+starte før hele fila er lastet ned. Endrer lengden seg, oppdaterer du også «1:47» i
+[`index.html`](index.html).
 
 ## Legg inn LinkedIn-profilen din
 
@@ -41,19 +55,20 @@ Siden er én side med ankere til hver seksjon:
 GitHub- og videolenken fungerer på samme måte. Har du motforestillinger mot LinkedIn, lim inn
 adressen til en annen kanal og bytt teksten på knappen.
 
-## Bilde (valgfritt)
+## Portrettbilder
 
-Legg bildet i `assets/img/` og bytt `<span class="avatar" aria-hidden="true">XX</span>` i kortet ditt med
-`<img class="avatar" src="assets/img/fornavn.jpg" alt="Portrett av Fornavn Etternavn">`.
-Et kvadratisk, profesjonelt portrett (minst 200 × 200 px) blir finest.
+Portrettene ligger i `assets/img/` som `fornavn.jpg` (`endi.jpg`, `taavi.jpg`, `brage.jpg`,
+`nicolai.jpg` og `kristian.jpg`). Vil du bytte bilde, erstatter du fila med et nytt bilde med samme
+filnavn. Et kvadratisk, profesjonelt portrett på rundt 400 × 400 px blir finest.
 
 ## Filer
 
 ```
 index.html              hele nettsiden (én side, med ankere til hver seksjon)
 assets/css/styles.css   design, farger, mørk modus og responsivt oppsett
-assets/js/main.js       mobilmeny, aktiv menylenke og fade-inn ved scroll
-assets/img/             favicon, delingsbilde (og eventuelle portrettbilder)
+assets/js/main.js       mobilmeny, avspillingsknapp, aktiv menylenke og fade-inn ved scroll
+assets/img/             favicon, delingsbilde, portrettbilder og forsidebilde til videoen
+assets/video/           promovideoen
 .github/workflows/      publiserer automatisk til GitHub Pages ved push til main
 ```
 

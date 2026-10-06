@@ -292,7 +292,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(3.5rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5.5rem);
+  padding: clamp(1.6rem, 4.5vw, 3.6rem) 0 clamp(3rem, 7vw, 5.5rem);
 }
 
 .hero-glow {
@@ -307,7 +307,85 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   pointer-events: none;
 }
 
-.hero-inner { position: relative; max-width: 940px; }
+/* Promovideoen står først (til venstre, og øverst på smale skjermer),
+   med teksten ved siden av og nøkkeltallene i full bredde under. */
+.hero-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 2.6rem 3rem;
+  align-items: center;
+}
+
+.hero h1 { font-size: clamp(2.2rem, 3.45vw, 2.75rem); }
+
+/* ---------- Promovideo ---------- */
+
+.promo { margin: 0; }
+
+.promo-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: #000;
+  box-shadow: var(--shadow-lg);
+}
+
+.promo-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Knappen dekker hele forsidebildet, så et klikk hvor som helst starter videoen.
+   Den vises bare når JS kjører, og skjules så snart videoen er i gang. */
+.promo-play { display: none; }
+.js .promo-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(.8rem, 2.2vw, 1.3rem);
+  border: 0;
+  border-radius: inherit;
+  background: linear-gradient(to top, rgba(0, 0, 0, .5) 0%, transparent 42%);
+  font: inherit;
+  cursor: pointer;
+}
+.js .promo.is-started .promo-play { display: none; }
+.promo-play:focus-visible { outline-offset: -5px; border-radius: var(--radius-lg); }
+
+.promo-play-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1.15rem .6rem .65rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: .97rem;
+  box-shadow: var(--shadow-md);
+  transition: transform .18s ease, background .18s ease;
+}
+.promo-play-pill svg { width: 30px; height: 30px; flex: none; }
+.promo-play:hover .promo-play-pill { background: var(--accent-deep); transform: translateY(-2px); }
+@media (prefers-color-scheme: dark) { .promo-play-pill { color: #21120c; } }
+
+.promo-length {
+  padding-left: .65rem;
+  border-left: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.promo-caption {
+  margin-top: .9rem;
+  font-size: .86rem;
+  color: var(--ink-faint);
+}
 
 /* Statuslinje øverst i hero: forteller med en gang hva siden handler om. */
 .status {
@@ -367,8 +445,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stats {
   display: grid;
   grid-template-columns: minmax(0, .8fr) minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr);
+  grid-column: 1 / -1;
   gap: 1px;
-  margin: 3.5rem 0 0;
+  margin: .9rem 0 0;
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -501,8 +580,8 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   display: grid;
   place-items: center;
   flex: none;
-  width: 64px; height: 64px;
-  border-radius: 20px;
+  width: 84px; height: 84px;
+  border-radius: 24px;
   object-fit: cover;
   background: linear-gradient(140deg, var(--accent) 0%, var(--amber) 100%);
   color: #fff;
@@ -974,6 +1053,10 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .site-nav a { padding: .8rem .9rem; border-radius: var(--radius-sm); }
   .site-nav .nav-cta { margin: .5rem 0 0; text-align: center; }
 
+  .hero-inner { grid-template-columns: 1fr; gap: 2.2rem; }
+  .hero h1 { font-size: clamp(2.4rem, 6.4vw, 4rem); }
+  .stats { margin-top: 1.2rem; }
+
   .cards-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .members { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -995,6 +1078,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 640px) {
+  .promo-frame { border-radius: var(--radius); }
+  .promo-play:focus-visible { border-radius: var(--radius); }
+  .promo-play-pill { font-size: .86rem; padding: .5rem .95rem .5rem .55rem; }
+  .promo-play-pill svg { width: 24px; height: 24px; }
+
   .cards-4, .members, .steps, .interest-grid { grid-template-columns: 1fr; }
   .give-get .panel { padding: 1.6rem 1.4rem; }
   .highlight { padding: 1.5rem 1.4rem; }

@@ -23,6 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preload" as="image" href="assets/img/promo-poster.jpg">
 <!-- Fade-inn-effekten skal bare slå inn når JS faktisk kjører,
      slik at innholdet aldri blir liggende usynlig uten JS. -->
 <script>document.documentElement.classList.add("js");</script>
@@ -63,14 +64,36 @@
   <section class="hero" id="start">
     <div class="hero-glow" aria-hidden="true"></div>
     <div class="wrap hero-inner">
-      <p class="status reveal"><span class="status-dot" aria-hidden="true"></span>Søker oppdragsgiver til bacheloroppgaven våren 2027</p>
-      <h1 class="reveal">Fem studenter.<br>Ett prosjekt.<br><span class="hl">Deres neste løsning.</span></h1>
-      <p class="lead reveal">Vi er fem tredjeårsstudenter på bachelorprogrammet IT og informasjonssystemer ved
-        Universitetet i Agder. Våren 2027 skriver vi bacheloroppgave, og vi vil gjerne bruke den på et reelt behov i
-        virksomheten deres – fra første idé til en løsning som kan tas i bruk.</p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-primary" href="#kontakt">Foreslå et prosjekt</a>
-        <a class="btn btn-ghost" href="#teamet">Møt teamet <span aria-hidden="true">→</span></a>
+      <!-- Promovideoen skal være det første man ser på siden. Avspillingsknappen over
+           forsidebildet vises bare når JS kjører; ellers brukes nettleserens egne kontroller. -->
+      <figure class="promo reveal">
+        <div class="promo-frame">
+          <video class="promo-video" controls playsinline preload="metadata" width="1920" height="1080"
+                 poster="assets/img/promo-poster.jpg" aria-label="Promovideo: møt bachelorgruppen på campus ved UiA">
+            <source src="assets/video/promo.mp4" type="video/mp4">
+            <a href="assets/video/promo.mp4">Last ned promovideoen (MP4)</a>
+          </video>
+          <button class="promo-play" type="button" aria-label="Spill av promovideoen (1 minutt og 47 sekunder)">
+            <span class="promo-play-pill">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#ikon-video"></use></svg>
+              Se promovideoen
+              <span class="promo-length">1:47</span>
+            </span>
+          </button>
+        </div>
+        <figcaption class="promo-caption">Promovideo · Møt oss fem på campus ved Universitetet i Agder</figcaption>
+      </figure>
+
+      <div class="hero-text">
+        <p class="status reveal"><span class="status-dot" aria-hidden="true"></span>Søker oppdragsgiver til bacheloroppgaven våren 2027</p>
+        <h1 class="reveal">Fem studenter.<br>Ett prosjekt.<br><span class="hl">Deres neste løsning.</span></h1>
+        <p class="lead reveal">Vi er fem tredjeårsstudenter på bachelorprogrammet IT og informasjonssystemer ved
+          Universitetet i Agder. Våren 2027 skriver vi bacheloroppgave, og vi vil gjerne bruke den på et reelt behov i
+          virksomheten deres – fra første idé til en løsning som kan tas i bruk.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#kontakt">Foreslå et prosjekt</a>
+          <a class="btn btn-ghost" href="#teamet">Møt teamet <span aria-hidden="true">→</span></a>
+        </div>
       </div>
 
       <dl class="stats reveal">
@@ -136,15 +159,14 @@
         · Profillenker: knappene for LinkedIn, GitHub og video vises bare når href har en adresse.
           Vil du vise GitHub eller en videopresentasjon, limer du inn adressen i href="" på den
           lenken i kortet ditt, så dukker knappen opp automatisk.
-        · Bilde: legg fila i assets/img/ og bytt
-          <span class="avatar" aria-hidden="true">XX</span>
-          med <img class="avatar" src="assets/img/fornavn.jpg" alt="Portrett av Fornavn Etternavn">
+        · Bilde: portrettene ligger i assets/img/fornavn.jpg. Vil du bytte bilde, erstatter du fila
+          med et nytt kvadratisk portrett med samme filnavn.
       -->
 
       <div class="members">
         <article class="member reveal">
           <header class="member-head">
-            <span class="avatar" aria-hidden="true">EM</span>
+            <img class="avatar" src="assets/img/endi.jpg" alt="Portrett av Endi Muriqi" width="400" height="400" loading="lazy" decoding="async">
             <div>
               <h3>Endi Muriqi</h3>
               <p class="member-role">Struktur, oppfølging og tjenestedesign</p>
@@ -170,7 +192,7 @@
 
         <article class="member reveal">
           <header class="member-head">
-            <span class="avatar" aria-hidden="true">TH</span>
+            <img class="avatar" src="assets/img/taavi.jpg" alt="Portrett av Taavi-Topias Henell" width="400" height="400" loading="lazy" decoding="async">
             <div>
               <h3>Taavi-Topias Henell</h3>
               <p class="member-role">Utvikler · frontend og backend</p>
@@ -194,7 +216,7 @@
 
         <article class="member reveal">
           <header class="member-head">
-            <span class="avatar" aria-hidden="true">BK</span>
+            <img class="avatar" src="assets/img/brage.jpg" alt="Portrett av Brage Kristoffersen" width="400" height="400" loading="lazy" decoding="async">
             <div>
               <h3>Brage Kristoffersen</h3>
               <p class="member-role">Utvikler · struktur og gjennomføring</p>
@@ -218,7 +240,7 @@
 
         <article class="member reveal">
           <header class="member-head">
-            <span class="avatar" aria-hidden="true">NS</span>
+            <img class="avatar" src="assets/img/nicolai.jpg" alt="Portrett av Nicolai A.M. Stephansen" width="400" height="400" loading="lazy" decoding="async">
             <div>
               <h3>Nicolai A.M. Stephansen</h3>
               <p class="member-role">Skriving, research og kvalitetssikring</p>
@@ -244,7 +266,7 @@
 
         <article class="member reveal">
           <header class="member-head">
-            <span class="avatar" aria-hidden="true">KE</span>
+            <img class="avatar" src="assets/img/kristian.jpg" alt="Portrett av Kristian Espevik" width="168" height="168" loading="lazy" decoding="async">
             <div>
               <h3>Kristian Espevik</h3>
               <p class="member-role">Utvikler · systemer, databaser og sikkerhet</p>

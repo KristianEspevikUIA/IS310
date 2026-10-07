@@ -61,13 +61,21 @@ Portrettene ligger i `assets/img/` som `fornavn.jpg` (`endi.jpg`, `taavi.jpg`, `
 `nicolai.jpg` og `kristian.jpg`). Vil du bytte bilde, erstatter du fila med et nytt bilde med samme
 filnavn. Et kvadratisk, profesjonelt portrett på rundt 400 × 400 px blir finest.
 
+## Gruppebilde i toppen
+
+Gruppebildet (`assets/img/gruppebilde.jpg`) er bakgrunn i toppseksjonen: teglveggen toner inn bak
+video og tekst, og nederst står vi fem. Skal bildet byttes, bør det nye ha omtrent samme utsnitt –
+gruppen midtstilt og god plass over hodene. Hvor stort bildet er og hvor mye av det som vises,
+styres av variablene `--photo-w`, `--photo-hide` og `--photo-window` på `.hero` i
+[`assets/css/styles.css`](assets/css/styles.css).
+
 ## Filer
 
 ```
 index.html              hele nettsiden (én side, med ankere til hver seksjon)
 assets/css/styles.css   design, farger, mørk modus og responsivt oppsett
 assets/js/main.js       mobilmeny, avspillingsknapp, aktiv menylenke og fade-inn ved scroll
-assets/img/             favicon, delingsbilde, portrettbilder og forsidebilde til videoen
+assets/img/             favicon, delingsbilde, portrettbilder, gruppebilde og forsidebilde til videoen
 assets/video/           promovideoen
 .github/workflows/      publiserer automatisk til GitHub Pages ved push til main
 ```

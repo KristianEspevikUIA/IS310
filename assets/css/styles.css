@@ -183,6 +183,12 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   transform: translateY(-2px);
 }
 
+/* Ghost-knapp på de mørke blokkene (toppen og kontaktboksen). */
+.hero .btn-ghost,
+.cta .btn-ghost { color: var(--inverse-ink); border-color: color-mix(in srgb, var(--inverse-ink) 35%, transparent); }
+.hero .btn-ghost:hover,
+.cta .btn-ghost:hover { border-color: var(--inverse-ink); background: color-mix(in srgb, var(--inverse-ink) 10%, transparent); }
+
 @media (prefers-color-scheme: dark) {
   .btn-primary { color: #21120c; }
 }
@@ -289,10 +295,40 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 /* ---------- Hero ---------- */
 
+/* Toppen er en mørk blokk i begge fargemoduser, med gruppebildet som bakgrunn.
+   Bildet er forankret i bunnen: teglveggen toner inn bak innholdet, og under
+   nøkkeltallene står vi fem i full farge. Utsnittet styres av tre tall, alle
+   som andel av bildets bredde, så det skalerer likt på alle skjermer. */
 .hero {
+  /* Full bredde på PC (maks 1560 px). På mobil forstørres bildet, så vi fem
+     fyller bredden uten at noen ansikter havner utenfor. */
+  --photo-w: min(max(100vw, min(155vw, 430px + 40vw)), 1560px);
+  --photo-hide: .09;    /* så mye av bildet stikker ned under kanten */
+  --photo-window: .2;   /* høyden på feltet der vi vises, under nøkkeltallene */
   position: relative;
   overflow: hidden;
-  padding: clamp(1.6rem, 4.5vw, 3.6rem) 0 clamp(3rem, 7vw, 5.5rem);
+  background: var(--inverse-bg);
+  color: var(--inverse-ink);
+  padding: clamp(1.6rem, 4.5vw, 3.6rem) 0 calc(var(--photo-w) * var(--photo-window));
+}
+
+.hero-photo {
+  position: absolute;
+  left: 50%;
+  bottom: calc(var(--photo-w) * var(--photo-hide) * -1);
+  width: var(--photo-w);
+  transform: translateX(-50%);
+  pointer-events: none;
+  /* Toner ut sidekantene på skjermer som er bredere enn bildet. */
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
+}
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  /* Veggen toner gradvis inn ovenfra; fra hodehøyde og ned vises bildet fullt. */
+  -webkit-mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .3) 20%, rgba(0, 0, 0, .42) 45%, #000 53%);
+  mask-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, .3) 20%, rgba(0, 0, 0, .42) 45%, #000 53%);
 }
 
 .hero-glow {
@@ -311,6 +347,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
    med teksten ved siden av og nøkkeltallene i full bredde under. */
 .hero-inner {
   position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   gap: 2.6rem 3rem;
@@ -329,7 +366,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: #000;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--inverse-ink) 16%, transparent), var(--shadow-lg);
 }
 
 .promo-video {
@@ -384,7 +421,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .promo-caption {
   margin-top: .9rem;
   font-size: .86rem;
-  color: var(--ink-faint);
+  color: color-mix(in srgb, var(--inverse-ink) 72%, transparent);
 }
 
 /* Statuslinje øverst i hero: forteller med en gang hva siden handler om. */
@@ -394,9 +431,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   gap: .65rem;
   font-size: .88rem;
   font-weight: 600;
-  color: var(--ink-soft);
-  background: color-mix(in srgb, var(--surface) 80%, transparent);
-  border: 1px solid var(--line);
+  color: var(--inverse-ink);
+  background: color-mix(in srgb, var(--inverse-ink) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--inverse-ink) 24%, transparent);
   padding: .45rem 1.05rem .45rem .9rem;
   border-radius: 999px;
   margin-bottom: 1.6rem;
@@ -430,7 +467,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 .lead {
   font-size: clamp(1.05rem, 1.6vw, 1.22rem);
-  color: var(--ink-soft);
+  color: color-mix(in srgb, var(--inverse-ink) 82%, transparent);
   max-width: 62ch;
   margin-top: 1.4rem;
 }
@@ -448,6 +485,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   grid-column: 1 / -1;
   gap: 1px;
   margin: .9rem 0 0;
+  color: var(--ink);
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -992,8 +1030,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .contact-mail svg { width: 18px; height: 18px; flex: none; opacity: .8; }
 
 .cta-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
-.cta .btn-ghost { color: var(--inverse-ink); border-color: color-mix(in srgb, var(--inverse-ink) 35%, transparent); }
-.cta .btn-ghost:hover { border-color: var(--inverse-ink); background: color-mix(in srgb, var(--inverse-ink) 10%, transparent); }
 
 /* ---------- Footer ---------- */
 
@@ -1078,6 +1114,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 
 @media (max-width: 640px) {
+  /* På mobil vises vi fra hodet til hoftene, så feltet ikke blir for lavt. */
+  .hero { --photo-hide: 0; --photo-window: .31; }
+
   .promo-frame { border-radius: var(--radius); }
   .promo-play:focus-visible { border-radius: var(--radius); }
   .promo-play-pill { font-size: .86rem; padding: .5rem .95rem .5rem .55rem; }

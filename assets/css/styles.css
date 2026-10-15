@@ -230,18 +230,23 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   place-items: center;
   width: 42px; height: 42px;
   border-radius: 13px;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent), #f0b429);
   color: #fff;
   font-family: var(--font-head);
   font-weight: 700;
   font-size: .95rem;
   letter-spacing: -.03em;
   box-shadow: var(--shadow-sm);
+  transition: transform .25s ease;
 }
+.brand-mark svg { width: 30px; height: 30px; }
+.brand:hover .brand-mark { transform: translateY(-2px) rotate(-4deg); }
+@media (prefers-reduced-motion: reduce) { .brand:hover .brand-mark { transform: none; } }
 @media (prefers-color-scheme: dark) { .brand-mark { color: #21120c; } }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand-text strong { font-family: var(--font-head); font-size: 1.05rem; letter-spacing: -.01em; }
+.brand-num { color: var(--accent); }
 .brand-text small { color: var(--ink-faint); font-size: .78rem; }
 
 .site-nav ul {

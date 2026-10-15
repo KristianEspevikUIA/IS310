@@ -1,6 +1,6 @@
-# IS-310 Bachelorgruppe · UiA
+# Stack 5 · Bachelorgruppe · UiA
 
-Nettsted for prosjektgruppen vår i **IS-310 Prosjektgjennomføring** ved Universitetet i Agder.
+Nettsted for **Stack 5**, prosjektgruppen vår i **IS-310 Prosjektgjennomføring** ved Universitetet i Agder.
 Siden er gruppas ansikt utad mot bedrifter og virksomheter som kan bli oppdragsgiver for
 bacheloroppgaven vår våren 2027. Den bygger videre på oppgave 1 (presentasjon av gruppen) med en
 profilering rettet mot potensielle oppdragsgivere.
@@ -29,6 +29,12 @@ Siden er én side med ankere til hver seksjon:
 | Samarbeid      | `#samarbeid`   | Hva oppdragsgiver får, hva vi trenger, og spørsmål og svar               |
 | Arbeidsform    | `#arbeidsform` | Slik jobber vi, verktøy og tidsplan                                      |
 | Kontakt        | `#kontakt`     | Kontaktperson og e-post                                                  |
+
+## Navn og logo
+
+Gruppen heter **Stack 5**. Logoen er fem lag i en stack – ett for hver av oss. Den ligger som
+`assets/img/favicon.svg` (fanen i nettleseren) og som innebygd SVG i toppmenyen i
+[`index.html`](index.html), så endrer du logoen, må begge oppdateres.
 
 ## Promovideo
 
